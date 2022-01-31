@@ -8,8 +8,8 @@ ENV ACTIVEMQ_VERSION 5.15.14
 ENV ACTIVEMQ apache-activemq-$ACTIVEMQ_VERSION
 ENV ACTIVEMQ_HOME /opt/activemq
 
-RUN apt update && \
-    apt install -y curl && \
+RUN apt-get update && \
+    apt-get install -f -y curl && \
     mkdir -p /opt && \
     curl -s -S https://archive.apache.org/dist/activemq/$ACTIVEMQ_VERSION/$ACTIVEMQ-bin.tar.gz | tar -xvz -C /opt && \
     ln -s /opt/$ACTIVEMQ $ACTIVEMQ_HOME
