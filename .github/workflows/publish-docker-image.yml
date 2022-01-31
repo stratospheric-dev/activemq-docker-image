@@ -23,6 +23,6 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platforms: linux/arm64,linux/amd64
+          platforms: linux/arm/v6,linux/amd64
           push: true
           tags: stratospheric/activemq-docker-image:latest
