@@ -1,4 +1,4 @@
-FROM openjdk:11-jre
+FROM eclipse-temurin:11-jre-focal
 
 LABEL org.opencontainers.image.authors="Björn Wilmsmann <bjoernkw@bjoernkw.com>, Philip Riecks <mail@philipriecks.de>"
 # Derived from https://github.com/njmittet/alpine-activemq
