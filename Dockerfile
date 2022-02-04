@@ -10,7 +10,9 @@ ENV ACTIVEMQ_HOME /opt/activemq
 # See https://archive.apache.org/dist/activemq/5.15.14/apache-activemq-5.15.14-bin.tar.gz.sha512
 ENV SHA512_VAL=5708ed926988e4796a8badaed3dafd32bcbc47890169df2712568ad706858370b20e5cd9a4e3298521692151e63a5ac6d06866b3ad188aa0e36b28e370240d5c
 
-RUN mkdir -p /opt && \
+RUN apt update && \
+    apt install -f -y curl && \
+    mkdir -p /opt && \
     curl https://archive.apache.org/dist/activemq/$ACTIVEMQ_VERSION/$ACTIVEMQ-bin.tar.gz -o $ACTIVEMQ-bin.tar.gz
 
 RUN if [ "$SHA512_VAL" != "$(sha512sum $ACTIVEMQ-bin.tar.gz | awk '{print($1)}')" ];\
