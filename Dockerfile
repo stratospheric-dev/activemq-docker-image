@@ -19,8 +19,6 @@ RUN if [ "$SHA512_VAL" != "$(sha512sum $ACTIVEMQ-bin.tar.gz | awk '{print($1)}')
         exit 1; \
     fi;
 
-RUN file $ACTIVEMQ-bin.tar.gz
-
 RUN tar xzf $ACTIVEMQ-bin.tar.gz -C /opt && \
     ln -s /opt/$ACTIVEMQ $ACTIVEMQ_HOME && \
     groupadd activemq && \
