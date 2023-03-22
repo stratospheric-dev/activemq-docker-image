@@ -1,14 +1,14 @@
-FROM eclipse-temurin:11-jre-focal
+FROM eclipse-temurin:17-jre-focal
 
 LABEL org.opencontainers.image.authors="Björn Wilmsmann <bjoernkw@bjoernkw.com>, Philip Riecks <mail@philipriecks.de>"
 # Derived from https://github.com/njmittet/alpine-activemq and https://github.com/rmohr/docker-activemq
 # by Nils Jørgen Mittet <njmittet@gmail.com> and Roman Mohr <roman@fenkhuber.at>
 
-ENV ACTIVEMQ_VERSION 5.15.14
+ENV ACTIVEMQ_VERSION 5.17.4
 ENV ACTIVEMQ apache-activemq-$ACTIVEMQ_VERSION
 ENV ACTIVEMQ_HOME /opt/activemq
-# See https://archive.apache.org/dist/activemq/5.15.14/apache-activemq-5.15.14-bin.tar.gz.sha512
-ENV SHA512_VAL=5708ed926988e4796a8badaed3dafd32bcbc47890169df2712568ad706858370b20e5cd9a4e3298521692151e63a5ac6d06866b3ad188aa0e36b28e370240d5c
+# See https://archive.apache.org/dist/activemq/5.17.4/apache-activemq-5.17.4-bin.tar.gz.sha512
+ENV SHA512_VAL=1fbc83f5efdab9980690e938c101a3beea22d4af496c1f793b41dbbe086e341f159bb62740451221139d6e5968184bc82b55c27f46510811896c84ec12c0d595
 
 RUN apt update && \
     apt install -y curl && \
